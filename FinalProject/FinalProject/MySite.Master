@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MySite.master.cs" Inherits="FinalProject.MySite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <%-- Custom css --%>
+    <link href="customCSS/customStyleSheet.css" rel="stylesheet" />
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- navigation -->
+        <div class="myNav">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Navbar content -->
+                <a class="navbar-brand" href="index.aspx">
+                    <img src="images/pokeball.svg" width="30" height="30" class="d-inline-block align-top" />
+                    Pokedox
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="logIN" runat="server" OnClick="logIN_Click">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="signUP" runat="server" OnClick="signUP_Click">Register</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="logOUT" runat="server" OnClick="logOUT_Click">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="myCollection" runat="server" OnClick="myCollection_Click">My Collection</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="userInfo" runat="server" OnClick="userInfo_Click">User:</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- navigation -->
+
+
+        <!-- Main Content Placeholder -->
+        <div id="pageContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+        <!-- footer -->
+        <footer>
+            <div id="masterFooter" class="container-fluid">
+                <p id="footerContent">
+                    <img src="images/pokecoin.svg" width="30" height="30" class="d-inline-block" />
+                    &copy 2020 All right Reversed. Developed & desigend by <a class="footerlinks" href="https://shashwa7.netlify.com/" target="_blank">shashwa7.dev</a>
+                    <img src="images/pokecoin1.svg" width="30" height="30" class="d-inline-block" />
+                </p>
+            </div>
+        </footer>
+        <!-- Footer -->
+    </form>
+</body>
+
+</html>
